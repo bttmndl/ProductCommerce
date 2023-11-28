@@ -70,17 +70,14 @@ const HomeScreen: React.FC = () => {
                 flexDirection: "row",
                 backgroundColor: "#F9B023",
                 height: 156,
-                width: "80%",
+                width: 280,
                 borderRadius: 8,
               }}
             >
-              <View style={{ width: "40%" }}>
-                <Image
-                  source={{ uri: item?.thumbnail }}
-                  style={{ width: "100%" }}
-                />
+              <View style={{ width: "50%" }}>
+                <ProductCard product={item} onPress={handleProductPress} showFav={false}/>
               </View>
-              <View style={{ width: "40%", paddingLeft: 16 }}>
+              <View style={{ width: "50%", paddingLeft: 2 }}>
                 <Text style={{ color: "white", fontSize: 20 }}>Get</Text>
                 <Text
                   style={{ color: "white", fontSize: 32, fontWeight: "bold" }}
@@ -106,7 +103,7 @@ const HomeScreen: React.FC = () => {
         renderItem={({ item }) => (
           <TouchableOpacity>
             <View style={{ flexDirection: "row", marginTop: 12 }}>
-              <ProductCard product={item} onPress={handleProductPress} />
+              <ProductCard product={item} onPress={handleProductPress} showFav={true}/>
             </View>
           </TouchableOpacity>
         )}

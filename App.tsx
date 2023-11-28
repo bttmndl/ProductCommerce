@@ -6,6 +6,7 @@ import HomeScreen from "./src/containers/HomeScreen";
 import ProductDetailsScreen from "./src/containers/ProductDetailsScreen";
 import { Provider } from "react-redux";
 import store from "./src/store/configureStore";
+import Footer from "./src/components/Footer";
 
 const Stack = createStackNavigator();
 
@@ -21,6 +22,7 @@ const App: React.FC = () => {
               component={ProductDetailsScreen}
             />
           </Stack.Navigator>
+          <Footer/>
         </SafeAreaView>
       </NavigationContainer>
     </Provider>

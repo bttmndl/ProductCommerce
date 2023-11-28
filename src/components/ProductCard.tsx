@@ -6,9 +6,10 @@ import { FontAwesome } from "@expo/vector-icons";
 interface ProductCardProps {
   product: Product;
   onPress: (productId: number) => void;
+  showFav: boolean;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, onPress }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, onPress, showFav }) => {
   const [favorite, setFavorite] = useState<boolean>(false)
 
   return (
@@ -47,9 +48,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onPress }) => {
 
         <TouchableOpacity
           style={styles.favoriteButton}
-          onPress={() => setFavorite(true)}
+          onPress={() => setFavorite(p=>!p)}
         >
-          <FontAwesome name="heart" size={20} color={!favorite ? "white" : "red"} />
+          {showFav && <FontAwesome name="heart" size={20} color={!favorite ? "white" : "red"} />}
         </TouchableOpacity>
 
       </TouchableOpacity>
