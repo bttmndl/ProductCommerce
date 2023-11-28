@@ -7,6 +7,8 @@ import ProductDetailsScreen from "./src/containers/ProductDetailsScreen";
 import { Provider } from "react-redux";
 import store from "./src/store/configureStore";
 import Footer from "./src/components/Footer";
+import CartScreen from "./src/containers/CartScreen";
+import FavoriteScreen from "./src/containers/FavoriteScreen";
 
 const Stack = createStackNavigator();
 
@@ -21,8 +23,10 @@ const App: React.FC = () => {
               name="ProductDetails"
               component={ProductDetailsScreen}
             />
+            <Stack.Screen name="Cart" component={CartScreen} />
+            <Stack.Screen name="Favorite" component={FavoriteScreen} />
           </Stack.Navigator>
-          <Footer/>
+          <Footer />
         </SafeAreaView>
       </NavigationContainer>
     </Provider>

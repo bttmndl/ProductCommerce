@@ -1,9 +1,10 @@
 // src/types/cartTypes.ts
 
+import { Product } from "./productTypes";
+
 export interface CartItem {
-  productId: number;
+  product: Product;
   quantity: number;
-  // Include other properties as needed
 }
 
 export interface CartState {

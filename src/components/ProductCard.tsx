@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { Product } from "../types/productTypes";
 import { FontAwesome } from "@expo/vector-icons";
+import { useDispatch } from "react-redux";
+import { ThDispatch } from "../types";
+import { addToCart } from "../actions/cartAction";
+import { addToFavorites, removeFromFavorites } from "../actions/favoritesAction";
 
 interface ProductCardProps {
   product: Product;
@@ -12,11 +16,25 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ product, onPress, showFav }) => {
   const [favorite, setFavorite] = useState<boolean>(false)
 
+  const dispatch = useDispatch<ThDispatch>();
+
+  const handleFavorite =()=>{
+    
+    if(!favorite){
+      dispatch(addToFavorites(product.id));
+    }else{
+      dispatch(removeFromFavorites(product.id));
+    }
+    setFavorite(p=>!p)
+  }
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => onPress(product.id)} style={styles.card}>
+      <View style={styles.card}>
 
-        <Image source={{ uri: product?.thumbnail }} style={styles.image} />
+        <TouchableOpacity onPress={() => onPress(product.id)}>
+          <Image source={{ uri: product?.thumbnail }} style={styles.image} />
+        </TouchableOpacity>
 
         <View style={styles.details}>
           <View style={{ flexDirection: "row" }}>
@@ -35,7 +53,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onPress, showFav }) 
                   alignItems: "center",
                 }}
               >
-                <TouchableOpacity style={{}} onPress={() => {}}>
+                <TouchableOpacity
+                  style={{}}
+                  onPress={() => {
+                    dispatch(addToCart(product));
+                  }}
+                >
                   <Text style={{ color: "white" }}>+</Text>
                 </TouchableOpacity>
               </View>
@@ -48,12 +71,17 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onPress, showFav }) 
 
         <TouchableOpacity
           style={styles.favoriteButton}
-          onPress={() => setFavorite(p=>!p)}
+          onPress={handleFavorite}
         >
-          {showFav && <FontAwesome name="heart" size={20} color={!favorite ? "white" : "red"} />}
+          {showFav && (
+            <FontAwesome
+              name="heart"
+              size={20}
+              color={!favorite ? "white" : "red"}
+            />
+          )}
         </TouchableOpacity>
-
-      </TouchableOpacity>
+      </View>
     </View>
   );
 };

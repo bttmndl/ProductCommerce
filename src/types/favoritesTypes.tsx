@@ -2,7 +2,6 @@
 
 export interface FavoritesState {
   products: number[]; // Array of product IDs in favorites
-  // Include other properties as needed
 }
 
 // Define action types for favorites actions

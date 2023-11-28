@@ -6,16 +6,20 @@ import {
   Entypo,
   Feather,
 } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { RootStackParamList } from "../types/NavigationTypes";
 
 
 const Footer: React.FC= () => {
   const [selectedTab, setSelectedTab] = useState<string>("home");
 
-  const handleTabPress = (tab: string) => {
-    setSelectedTab(tab);
-  };
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
-
+  const handleFavorite = ()=>{
+    setSelectedTab("heart");
+    navigation.navigate("Favorite")
+  }
 
   return (
     <View style={styles.footer}>
@@ -48,7 +52,7 @@ const Footer: React.FC= () => {
           name="heart"
           size={24}
           color={selectedTab === "heart" ? "yellow" : "black"}
-          onPress={() => setSelectedTab("heart")}
+          onPress={handleFavorite}
         />
         {selectedTab !== "heart" && (
           <Text style={{ marginTop: 8, alignItems: "center" }}>Favorites</Text>

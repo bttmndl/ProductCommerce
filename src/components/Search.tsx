@@ -10,7 +10,7 @@ const Search: React.FC<SearchProps> = ({ placeholder }) => {
   return (
     <View style={{ backgroundColor: "#2A4BA0", height:96 }}>
       <View style={styles.container}>
-        <FontAwesome name="search" size={24} color="#777" style={styles.icon} />
+        <FontAwesome name="search" size={24} color="white" style={styles.icon} />
         <TextInput
           style={styles.input}
           placeholder={placeholder}
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 8,
     fontSize: 16,
-    color: "#333",
+    color: "white",
   },
 });
 
