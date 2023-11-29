@@ -5,12 +5,14 @@ React Native Ecommerce shop
 ![image](https://github.com/bttmndl/ProductCommerce/assets/8470682/66667c28-6a90-446d-82b6-60eff277860a)
 
 
-Tech Stack : 
-React Native
-Typescript
-Redux (state management)
+# Project Name
 
-Forlder Structre:
+## Tech Stack
+- React Native
+- Typescript
+- Redux (state management)
+
+## Folder Structure
 project-root
 │
 ├── src
@@ -18,7 +20,7 @@ project-root
 │   │   ├── cartActions.ts
 │   │   ├── favoritesActions.ts
 │   │   └── productActions.ts
-|   |   └── productItemActions.ts
+│   │   └── productItemActions.ts
 │   ├── components
 │   │   ├── CartItem.tsx
 │   │   ├── ProductCard.tsx
