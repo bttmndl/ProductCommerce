@@ -14,7 +14,6 @@ React Native Ecommerce shop
 
 ## Folder Structure
 project-root
-│
 ├── src
 │   ├── actions
 │   │   ├── cartActions.ts
@@ -57,12 +56,10 @@ project-root
 │   ├── utils
 │   │   ├── api.ts
 │   └── App.tsx
-│
 ├── __tests__
 │   ├── cart.test.ts
 │   ├── favorites.test.ts
 │   └── product.test.ts
-│
 ├── .gitignore
 ├── tsconfig.json
 └── package.json
