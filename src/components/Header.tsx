@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
@@ -16,6 +16,7 @@ const Header: React.FC<HeaderProps> = ({ cartItems }) => {
   const goToCartScreen = ()=>{
     navigation.navigate("Cart");
   }
+  console.log(cartItems);
   return (
     <View style={styles.headerContainer}>
       <View style={styles.textContainer}><Text style={styles.titleColor}>Hey, Rahul</Text></View>
@@ -37,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ cartItems }) => {
 const styles = StyleSheet.create({
   headerContainer: {
     flexDirection: "row",
-    backgroundColor: "#2A4BA0", // Header background color
+    backgroundColor: "#2A4BA0", 
     width: "150%",
     height: "100%",
   },

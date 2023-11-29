@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text,  StyleSheet } from "react-native";
 import {
   FontAwesome5,
   MaterialIcons,
@@ -21,6 +21,11 @@ const Footer: React.FC= () => {
     navigation.navigate("Favorite")
   }
 
+  const handleHome = ()=>{
+    setSelectedTab("home");
+    navigation.navigate("Home");
+  }
+
   return (
     <View style={styles.footer}>
       <View style={selectedTab === "home" ? styles.tab : styles.notTab}>
@@ -28,7 +33,7 @@ const Footer: React.FC= () => {
           name="home"
           size={24}
           color={selectedTab === "home" ? "yellow" : "black"}
-          onPress={() => setSelectedTab("home")}
+          onPress={handleHome}
         />
         {selectedTab !== "home" && (
           <Text style={{ marginTop: 8, alignItems: "center" }}>Home</Text>

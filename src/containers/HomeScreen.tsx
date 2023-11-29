@@ -12,7 +12,6 @@ import Header from "../components/Header";
 import Search from "../components/Search";
 
 const HomeScreen: React.FC = () => {
-  const [loader, setLoader] = useState<boolean>(true)
 
   const dispatch = useDispatch<ThDispatch>();
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
@@ -22,14 +21,13 @@ const HomeScreen: React.FC = () => {
   
   useEffect(() => {
     dispatch(getProducts());
-    setLoader(p=>p=false);
   }, [dispatch]);
 
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => <Header cartItems={cartItemQuantity.length} />,
     });
-  }, [navigation]);
+  }, [navigation, cartItemQuantity.length]);
 
   const handleProductPress = (productId) => {
     // Navigate using react-navigation to ProductDetails
@@ -58,7 +56,7 @@ const HomeScreen: React.FC = () => {
         </View>
       </View>
 
-      { loader ? <Text>Loading...</Text> :
+      { products.length===0 ? <Text style={styles.loader}>Loading...</Text> :
         <FlatList
           data={products}
           keyExtractor={(item) => item.id.toString()}
@@ -101,7 +99,7 @@ const HomeScreen: React.FC = () => {
         <Text style={{ fontSize: 32 }}>Recommended</Text>
       </View>
 
-      { loader ? <Text>Loading</Text> :
+      { products.length===0 ? <Text style={styles.loader}>Loading</Text> :
       <FlatList
         data={products}
         keyExtractor={(item) => item.id.toString()}
@@ -132,6 +130,11 @@ const styles = StyleSheet.create({
   },
   bannerCard: {
     marginTop: 24,
+  },
+  loader: {
+    alignItems: "center",
+    fontSize: 32,
+    fontWeight: "bold",
   },
 });
 export default HomeScreen;
