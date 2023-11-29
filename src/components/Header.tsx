@@ -62,10 +62,10 @@ const styles = StyleSheet.create({
   },
   greetingText: {
     fontSize: 124,
-    color: "#fff", // Text color
+    color: "#fff", 
   },
   cartBadge: {
-    backgroundColor: "#e74c3c", // Badge background color
+    backgroundColor: "#e74c3c", 
     borderRadius: 10,
     paddingHorizontal: 5,
     position: "absolute",
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     right: 8,
   },
   cartBadgeText: {
-    color: "#fff", // Badge text color
+    color: "#fff",
     fontWeight: "bold",
   },
 });

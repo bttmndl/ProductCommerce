@@ -20,7 +20,7 @@ const ProductDetailsScreen: React.FC<ProductDetailsProps> = ({
   route,
   navigation,
 }) => {
-  // Destructuring with default values to avoid undefined errors
+  
   const productId = route.params;
 
   const dispatch = useDispatch<ThDispatch>();
@@ -31,19 +31,19 @@ const ProductDetailsScreen: React.FC<ProductDetailsProps> = ({
   useEffect(() => {
     dispatch(getProductItem(productId));
   }, [dispatch, productId]);
-  // Check if product is defined before accessing its properties
+  
   const productImages = productItem?.images || [];
   const productTitle = productItem?.title || "";
   const productDescription = productItem?.description || "";
   const productPrice = productItem?.price || 0;
 
   const handleAddToCart = () => {
-    // Implement logic to add the product to the cart
+    
     console.log("Product added to cart:", productItem);
   };
 
   const handleAddToFavorites = () => {
-    // Implement logic to add the product to favorites
+    
     console.log("Product added to favorites:", productItem);
   };
 

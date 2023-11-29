@@ -1,6 +1,5 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
 import { SafeAreaView } from "react-native";
 import HomeScreen from "./src/containers/HomeScreen";
 import ProductDetailsScreen from "./src/containers/ProductDetailsScreen";
@@ -9,6 +8,10 @@ import store from "./src/store/configureStore";
 import Footer from "./src/components/Footer";
 import CartScreen from "./src/containers/CartScreen";
 import FavoriteScreen from "./src/containers/FavoriteScreen";
+
+import {
+  createStackNavigator,
+} from "@react-navigation/stack";
 
 const Stack = createStackNavigator();
 

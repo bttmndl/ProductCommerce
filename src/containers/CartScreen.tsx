@@ -13,7 +13,7 @@ const CartScreen: React.FC = () => {
     return cartItems.reduce((total, item) => total + item.product.price * item.quantity, 0);
   };
 
-  // Dummy values for delivery and total
+  
   const delivery = 5.99;
   const total = calculateSubtotal() + delivery;
 

@@ -1,4 +1,4 @@
-// src/reducers/productReducer.ts
+
 
 import {
   ProductState,

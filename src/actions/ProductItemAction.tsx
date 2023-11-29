@@ -13,7 +13,7 @@ export const getProductItem = (productId: number) => {
     try {
       dispatch({ type: GET_PRODUCT_ITEM_REQUEST });
 
-      //fetchProducts is an async function that fetches products from api
+      //fetchProducts
       const products = await fetchProductItem(productId);
 
       dispatch({

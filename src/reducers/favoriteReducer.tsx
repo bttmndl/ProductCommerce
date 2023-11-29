@@ -1,5 +1,4 @@
- 
-// src/reducers/favoritesReducer.ts
+
 
 import { FavoritesState, FavoritesActionTypes, ADD_TO_FAVORITES, REMOVE_FROM_FAVORITES } from '../types/favoritesTypes';
 

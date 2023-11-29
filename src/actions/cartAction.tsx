@@ -1,5 +1,3 @@
-// src/actions/cartActions.ts
-
 import { Product } from "../types/productTypes";
 import {
   ADD_TO_CART,
@@ -33,7 +31,7 @@ export const updateCartItemQuantity = (productId: number, quantity: number) =>
     },
   } as const);
 
-// Export the action types for type checking
+// Exporting the action types for type checking
 export type CartActions = ReturnType<
   typeof addToCart | typeof removeFromCart | typeof updateCartItemQuantity
 >;

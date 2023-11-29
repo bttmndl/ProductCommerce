@@ -1,4 +1,4 @@
-// src/actions/favoritesAction.ts
+
 
 import {
   ADD_TO_FAVORITES,

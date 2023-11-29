@@ -1,12 +1,10 @@
-// FavoriteScreen.tsx
 
 import React from "react";
 import { View, Text, FlatList, StyleSheet, Image } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState, ThDispatch } from "../types";
-import { removeFromFavorites } from "../actions/favoritesAction";
 import RenderFavoriteItem from "../components/RenderFavoriteItem";
-import { Product } from "../types/productTypes";
+
 
 
 const FavoriteScreen: React.FC = () => {

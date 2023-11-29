@@ -1,4 +1,4 @@
-// src/constants/actionTypes.ts
+
 
 // Product action types
 export const GET_PRODUCTS_REQUEST = 'GET_PRODUCTS_REQUEST';
